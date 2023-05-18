@@ -1,0 +1,51 @@
+{
+  "$schema": "https://hypar.io/Schemas/Function.json",
+  "id": "cbba79ba-6e5c-4c11-8543-06f7b949ce84",
+  "name": "Simultaneous Geometry and Property Overrides",
+  "description": "The SimultaneousGeometryAndPropertyOverrides function.",
+  "language": "C#",
+  "overrides": {
+    "Walls": {
+      "context": "[*discriminator=Elements.StandardWall]",
+      "identity": {
+        "Add Id": {
+          "type": "string"
+        }
+      },
+      "behaviors": {
+        "add": {
+          "schema": {
+            "CenterLine": {
+              "$ref": "https://hypar.io/Schemas/Geometry/Line.json"
+            },
+            "Thickness": {
+              "type": "number",
+              "$hyparUnitType": "length"
+            },
+            "Height": {
+              "type": "number",
+              "$hyparUnitType": "length"
+            }
+          }
+        },
+        "remove": true
+      },
+      "schema": {
+        "CenterLine": {
+          "$ref": "https://hypar.io/Schemas/Geometry/Line.json"
+        },
+        "Thickness": {
+          "type": "number",
+          "$hyparUnitType": "length"
+        },
+        "Height": {
+          "type": "number",
+          "$hyparUnitType": "length"
+        }
+      }
+    }
+  },
+  "repository_url": "https://github.com/hypar-io/function",
+  "last_updated": "0001-01-01T00:00:00",
+  "cli_version": "1.5.0-alpha.4"
+}
